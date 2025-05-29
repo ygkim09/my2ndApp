@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>숫자 맞히기 게임</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007bff"/>
+</head>
+<body>
+  <h1>숫자 맞히기 🎯</h1>
+  <p>1부터 100 사이의 숫자를 맞혀보세요!</p>
+  <input type="number" id="guess" placeholder="숫자 입력" />
+  <button onclick="checkGuess()">확인</button>
+  <p id="result"></p>
+
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker 등록됨"))
+        .catch(err => console.error("Service Worker 등록 실패:", err));
+    }
+  </script>
+</body>
+</html>
